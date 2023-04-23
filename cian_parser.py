@@ -95,7 +95,6 @@ class Parser:
         try:
             link = "https://www.cian.ru/cat.php?deal_type=sale&engine_version=2&offer_type=flat&p={}" + \
                    f"&region={cities[self.region.capitalize()]}"""
-            print(int(self.rooms))
             if 0 >= int(self.rooms) or int(self.rooms) > 6:
                 raise TypeError
         except KeyError:
@@ -134,8 +133,8 @@ def start(username: str, minprice: int, maxprice: int, pages: int, region: str =
     with open(f'{username}.json', 'w') as file:
         result = []
         for i in range(1, pages + 1):
-            print(region, rooms)
             request = Parser(region=region, rooms=rooms, page=i, minprice=minprice, maxprice=maxprice)
             result += request.start_session()
+            print(i, "OK")
         json.dump(result, file)
     return True
