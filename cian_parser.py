@@ -116,8 +116,6 @@ class Parser:
         elif self.max_price:
             link += f"&maxprice={self.max_price}"
 
-
-
         search_page = self.session.get(link.format(self.page))
         search_page = search_page.text
         search_page = BeautifulSoup(search_page, 'lxml')
@@ -130,7 +128,7 @@ class Parser:
 
 
 def start(username: str, minprice: int, maxprice: int, pages: int, region: str = "Москва", rooms: str = "1-6", ):
-    with open(f'{username}.json', 'w') as file:
+    with open(f'files/{username}.json', 'w') as file:
         result = []
         for i in range(1, pages + 1):
             request = Parser(region=region, rooms=rooms, page=i, minprice=minprice, maxprice=maxprice)

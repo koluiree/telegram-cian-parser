@@ -17,7 +17,7 @@ async def send_file(update, context):
 
     chat_id = update.message.chat_id
 
-    file_path = f'{user_info["username"]}.json'
+    file_path = f'files/{user_info["username"]}.json'
 
     with open(file_path, 'rb') as file:
         await context.bot.send_document(chat_id=chat_id, document=file, caption="Готово!")
@@ -109,7 +109,6 @@ async def help(update, context):
 
 
 async def unknown(update, context):
-    """Обработчик неизвестных команд."""
     await update.message.reply_text('Извините, я не знаю такой команды.')
 
 
