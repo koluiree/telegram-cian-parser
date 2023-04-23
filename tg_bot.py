@@ -74,7 +74,7 @@ async def max_price(update, context):
 
 
 async def city(update, context):
-    user_info["city"] = context.args[0]
+    user_info["city"] = context.args[0].title()
     await update.message.reply_text('Ваш город установлен.')
 
 
