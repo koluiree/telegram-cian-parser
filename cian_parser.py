@@ -94,7 +94,7 @@ class Parser:
                   'Ярославль': '4636'}
         try:
             link = "https://www.cian.ru/cat.php?deal_type=sale&engine_version=2&offer_type=flat&p={}" + \
-                   f"&region={cities[self.region.capitalize()]}"""
+                   f"&region={cities[self.region.title()]}"""
             if 0 >= int(self.rooms) or int(self.rooms) > 6:
                 raise TypeError
         except KeyError:
