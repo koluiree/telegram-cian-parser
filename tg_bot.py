@@ -5,7 +5,7 @@ import cian_parser
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
-TOKEN = '6166579766:AAEfN9Fz8SMY05iyVCtq5VPG6Xoa6AOnv5U'
+TOKEN = 'TOKEN'
 application = Application.builder().token(TOKEN).build()
 logger = logging.getLogger(__name__)
 
