@@ -29,7 +29,6 @@ class Parser:
         except Exception:
             return None
 
-
     def get_rooms_count(self, text: str) -> int:
         if "1-комн" in text or "1-к" in text:
             rooms_count = 1
